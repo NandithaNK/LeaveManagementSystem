@@ -11,6 +11,7 @@ from django.contrib import messages
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
+from django.db.models import F
 def landing_page(request):
     return render(request, 'dashboard/landingpage.html')
 
@@ -74,7 +75,7 @@ def leave_request(request):
                     for members in mem:
                         username = members.username
                         if username == request.user.username:
-                         
+                            Members.objects.filter(user_id=members.user_id).update(leavesapplied=F('leavesapplied') + days_difference)
                             leave_req = Leave(
                                 start_date=start_date, end_date=end_date, reason=reason, user_id=members.user_id)
                             leave_req.save()

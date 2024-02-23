@@ -13,6 +13,7 @@ class Members(models.Model):
     mentoremail=models.CharField(max_length=100)
     image=models.ImageField(upload_to='profile_image', blank=True)
     n_approved= models.IntegerField()  
+    leavesapplied= models.IntegerField(default=0)
     def _str__(self):
         return f"{self.first_name}"
     
