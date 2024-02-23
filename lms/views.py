@@ -52,7 +52,7 @@ def leave_request(request):
         maillist = email.split(", ")
         msg = EmailMultiAlternatives(
             'Leave request', f'Start Date: {start_date}\nEnd Date: {end_date}\nReason: {reason}', EMAIL_HOST_USER, maillist)
-        
+            
 
         try:
             start_year, start_month, start_day = start_date.split('-')
