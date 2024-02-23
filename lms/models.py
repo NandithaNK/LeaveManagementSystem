@@ -16,6 +16,7 @@ class Members(models.Model):
     def _str__(self):
         return f"{self.first_name}"
     
+    
 class Leave(models.Model):
         user = models.ForeignKey(User,on_delete=models.CASCADE,default=1)
         start_date = models.DateField(null=True,blank=False)

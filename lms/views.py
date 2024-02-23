@@ -19,7 +19,7 @@ def members_list(request):
     members = Members.objects.all()
     value = False
     val = False
-    # print(request.user.id)
+  
 
     for det in members:
         uname = det.username
@@ -30,14 +30,12 @@ def members_list(request):
     return render(request, 'dashboard/members_list.html', {'members': members, "value": value, "val": val})
 
 
-# def my_view(request):
-#     user = request.user
-#     context = {'user': user}
-#     return render(request, 'my_template.html', context)
+
 def calculate_days(start_date, end_date):
     start_datetime = datetime.strptime(start_date, '%Y-%m-%d')
     end_datetime = datetime.strptime(end_date, '%Y-%m-%d')
     return (end_datetime - start_datetime).days
+
 
 def leave_request(request):
 
@@ -95,7 +93,7 @@ def user(request, id):
     user = get_object_or_404(Members, id=id)
     members = Members.objects.all()
     leave= Leave.objects.all()
-    # today= date.today()
+  
     if request.method == 'POST':
         start_dates = request.POST.get('start-date')
         end_dates = request.POST.get('end-date')
