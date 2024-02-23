@@ -59,7 +59,7 @@ def leave_request(request):
             end_year, end_month, end_day = end_date.split('-')
             valid = False
             days_difference = calculate_days(start_date, end_date)
-            if days_difference <= 7:
+            if days_difference <= 20:
                 if end_year > start_year or (end_year == start_year and end_month > start_month):
                     valid = True
                 elif end_year == start_year and end_month == start_month and end_day >= start_day:

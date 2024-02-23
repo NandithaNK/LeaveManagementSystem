@@ -7,6 +7,8 @@
 
     <!-- Include Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
     <style>
         body {
@@ -24,7 +26,6 @@
         }
 
         .right-half {
-          
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -53,12 +54,11 @@
             padding: 10px 20px;
             font-size: 18px;
             text-align: center;
-            text-color:black;
+            color: black;
             background-color: #D9D6F0;
             border: none;
             border-radius: 10px;
             cursor: pointer;
-         
         }
 
         .enter-button:hover {
@@ -68,13 +68,13 @@
 </head>
 <body>
 
-    <div class="left-half">
+    <div class="left-half animate__animated animate__fadeInDown">
         <img src="https://cdn.dribbble.com/userupload/10783193/file/original-dc414a4dad34abdabf6d8b5ad98ec146.jpg?resize=1200x900" alt="Landing Page Image">
     </div>
     
     <!-- Right Half with Heading -->
-    <div class="right-half">
-        <div class="leave-management-box">
+    <div class="right-half animate__animated animate__fadeInDown">
+        <div class="leave-management-box animate__animated animate__fadeInDown">
             <h1>The Leave Management System</h1>
             <p>Streamline and simplify your leave requests with our efficient system.<br> Manage your time off easily and focus on what matters most.</p>
             <button onclick="window.location.href='lms/lms'" class="enter-button">Explore</button>
